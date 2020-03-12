@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    
+    #expand{
+        display: inline-block;
+        width:50%;
+        margin-left:20%;
+        
+            }
+
+#content{
+    display: inline-block;
+    border-right: 4px dotted blue;
+    overflow: scroll;
+    width:20%;
+    height:100%;
+    vertical-align:middle
+}
+
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+    
+</style>
+    </head>
+
+    <body>
+        
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" id="cont">
+              <span class="close">&times;</span>
+
+                <h3>Reason for declination</h3>
+              <textarea id="reason" rows="4" cols="50"></textarea><br/>
+              <input type="text" id="ids" style="display:none">
+              <button type="button" id="sub">Reply</button>
+            </div>
+          
+          </div>
+    
+            <div id="content" class="inlin">
+
+            </div>
+
+
+            <div id="expand" class="inlin">
+
+                    <img src="queen.jpg">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i>
+                      While others were dreaming about it - I was getting it done. </p>
+            </div>
+        
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+    <script>
+  
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAycwPm7q4Qy9U9C-tTRUqnLu4w-3qtQ1Y",
+          authDomain: "software-engineering-2020.firebaseapp.com",
+          databaseURL: "https://software-engineering-2020.firebaseio.com",
+          projectId: "software-engineering-2020",
+          storageBucket: "software-engineering-2020.appspot.com",
+          messagingSenderId: "775588245826",
+          appId: "1:775588245826:web:a0198d25050fe3ea9c58db",
+          measurementId: "G-KZCP8ZH04S"
+        };
+      var app= firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore(app);
+        // Initialize Firebase
+       
+       
+        firebase.analytics();
+      </script>
+    <script src="notify.js"></script>
+
+
+</html>
