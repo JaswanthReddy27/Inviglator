@@ -1,0 +1,16 @@
+.card {
+  display: block;
+  text-align: center;
+  color: royalblue;
+  
+  .content {
+      padding: 4rem 1rem;
+  }
+  
+  .title {
+      font-size: 1.25rem;
+      background-color: gray;
+      border-radius: 3px;
+      padding: 0.5rem;
+  }
+}
