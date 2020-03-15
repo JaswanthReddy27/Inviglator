@@ -1,1 +1,0 @@
-This plugin lets you run jasmine specs as part of a jenkins build
