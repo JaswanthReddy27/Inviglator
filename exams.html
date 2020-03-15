@@ -1,0 +1,544 @@
+<html>
+    <head>
+
+        <link rel="icon" type="image/png" href="images1/icons/favicon.ico"/>
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="vendor1/bootstrap/css/bootstrap.min.css">
+            <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="css1/examcss.scss">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css1/examscss.css">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="abcd.scss">
+        <link rel="stylesheet" type="text/css" href="abcd.css">
+        
+
+
+        
+
+
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="fonts1/font-awesome-4.7.0/css/font-awesome.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="fonts1/Linearicons-Free-v1.0.0/icon-font.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="vendor1/animate/animate.css">
+        <!--===============================================================================================-->	
+            <link rel="stylesheet" type="text/css" href="vendor1/css-hamburgers/hamburgers.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="vendor1/animsition/css/animsition.min.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="vendor1/select2/select2.min.css">
+        <!--===============================================================================================-->	
+            <link rel="stylesheet" type="text/css" href="vendor1/daterangepicker/daterangepicker.css">
+        <!--===============================================================================================-->
+            <link rel="stylesheet" type="text/css" href="css1/util.css">
+            <link rel="stylesheet" type="text/css" href="css1/main.css">
+
+<style>
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 200px;
+  height: 200px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display:block;
+  margin-left:40%;
+  margin-top:10%;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+    html{
+        width:100%;
+        margin:0,0;
+    }
+
+    .inlin{
+        display: inline-block;
+        width:40%;
+        vertical-align: top;
+        margin-left: 1%;
+        width: auto;
+    }
+    #bod{
+        vertical-align: top;
+        width:80%;
+            }
+            .bg-image {
+	/* The image used */
+	background-image: url("images1/02.jpg");
+	
+      /* Add the blur effect */
+                
+  
+	
+	/* Full height */
+	height: 100%; 
+	position:relative;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+
+
+
+
+#card{
+  display:inline-block;
+  width:50%;
+  margin-left:2%;
+  margin-right:2%;
+ 
+  
+  
+  
+}
+
+#content{
+    margin-left: 0;
+    display:none;
+}
+    
+
+
+#cards{
+    background-color: #000080;
+    height: 350px;
+    width:20%;
+    margin-left:10%;
+    display: inline-block;
+    margin-top:5%;
+    border-radius: 8%;
+}
+
+#cards:hover{
+    margin-left:8%;
+    margin-right:3%;
+    height:400px;
+}
+
+
+.container5{
+  margin-left:10%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.face{
+  width:150px;
+  height:150px;
+  border: 9px solid #bdc3c7;
+  border-radius:50%;
+  animation: face 7s infinite;
+  animation-delay:2s;
+  position:relative;
+  
+  margin-left:10%;
+  background-color: yellow;
+}
+
+#caption{
+  text-align:Center;
+  font-family: 'Fredoka One', cursive;
+  color:#3498db;
+  font-size:30px;
+  margin-top:30%;
+}
+.mouth{
+  height:10px;
+  width:35px;
+  margin: 0 auto;
+  margin-top: 15px;
+  background-color:#bdc3c7;
+  animation: mouth 7s infinite;
+  animation-delay:2s;
+}
+
+.tear{
+  position:absolute;
+  background-color: #3498db;
+  height:0px;
+  width:45px;
+  top:62px;
+  left:29px;
+  border-bottom-left-radius:50%;
+  animation: tear 7s infinite;
+  animation-delay:2s;
+  z-index:9999;
+}
+
+.tear2{
+  position:absolute;
+  background-color: #3498db;
+  height:0px;
+  width:45px;
+  top:62px;
+  left:98px;
+  border-bottom-right-radius:50%;
+  animation: tear 7s infinite;
+  animation-delay:2s;
+  z-index:9999;
+}
+
+.eye{
+  height:10px;
+  width:45px;
+  background-color:#bdc3c7;
+  display:inline-block;
+  margin-left:20px;
+  margin-top:20px;
+  animation: cry 7s infinite;
+  animation-delay:2s;
+}
+
+.eyebrow{
+  width:30px;
+  font-size:40px;
+  font-weight:bold;
+  color:#bdc3c7;
+  display:inline-block;
+  margin-left:27px;
+  margin-top: 10px;
+  opacity:0;
+  animation: eyebrow 7s infinite;
+  animation-delay:2s;
+}
+
+.eyebrow:nth-child(1){
+  transform:rotate(-20deg);
+}
+
+.eyebrow:nth-child(2){
+  transform:rotate(20deg);
+}
+
+@keyframes mouth{
+  10%{height:30px;width:25px; border:6px solid black;border-radius:50%;margin-top:-8px;}
+  50%{height:30px;width:25px; border:6px solid black;border-radius:50%;margin-top:-8px;}
+  60%{height:10px;width:35px;border-radius:0%;border:none;margin-top:15px;}
+}
+
+@keyframes cry{
+  10%{transform:translateY(-34px);background-color:black;}
+  50%{transform:translateY(-34px);background-color:black;}
+  60%{background-color:#bdc3c7;transform:translateY(0px);}
+}
+
+@keyframes eyebrow{
+  10%{opacity:1;color:black;}
+  50%{opacity:1;color:black;}
+  60%{opacity:0;}
+}
+
+@keyframes face{
+  10%{border-color:black;}
+  50%{border-color:black;}
+  60%{border-color:#bdc3c7;}
+}
+
+@keyframes tear{
+  10%{height:96px;}
+  50%{height:96px;}
+  52%{height:0px;}
+}
+
+#opp{
+  width:40px;
+}
+#opp:hover{
+  width:70px;
+  padding-left:40px;
+}
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+
+.overlay button  {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 36px;
+
+  background: none;
+	
+	border: none;
+	
+	
+	cursor: pointer;
+	outline: inherit;
+  margin-left:45%;
+}
+
+.overlay button:hover, .overlay button:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+</style>
+    </head>
+
+    <body class="bg-image">
+      <div id="myNav" class="overlay">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="admin.html">Home</a>
+          
+          <a href="notify.html">Notifications</a>
+        
+          <button id="logout">Logout</button>
+        </div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="openNav()"class="btn" style="margin-left: 93%; "><i style="font-size: 20px;" class="fa fa-bars"></i> 
+          <span style="font-size:20px; cursor:pointer">Menu</span>	
+          </button>
+
+        <div id="abcd">
+
+          <button type="button" id="opp" onclick="openup()" class="inlin btn btn-primary btn-sm"  style="height:200px;margin-top:20%;"> <i class="fa fa-angle-right" style="font-size: 30px;" aria-hidden="true"></i> </button>
+            
+        <div class="inlin asdfg" id="limiter" style="margin-top:5%;display: none;" >
+                        
+            
+            <div class="wrap-login100 p-t-30 p-b-50" id="wrap">
+<form class="login100-form validate-form p-b-33 p-t-5 " id="form">
+
+    <div class="wrap-input100 validate-input" data-validate = "Enter Subject">
+        <input class="input100" type="text" placeholder="Subject" id="sub">
+        <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+    </div>
+
+    <div class="wrap-input100 validate-input" data-validate="Enter DOB">
+        <input class="input100" type="date" placeholder="Date" id="date">
+        <span class="focus-input100" data-placeholder="&#xe80f;"></span>
+    </div>
+    
+    <div>
+        <SELECT class="wrap-input100 validate-input" id="typ" name="Type"> 
+            <option value="Select">Select</option>
+            <option value="Periodical 1">Periodical 1</option>
+            <option value="Periodical 2">Periodical 2</option>
+            <option value="Periodical 3">Periodical 3</option>
+            <option value="Semester">Semester</option>
+        </SELECT>
+       
+    </div>
+    
+    <div class="container-login100-form-btn m-t-32">
+        <button id="submit" type="button" class="login100-form-btn">
+            Submit
+        </button>
+
+        <button id="close" style="margin-left:5%;" type="button" class="login100-form-btn" onclick="closeup()">
+            Close
+        </button>
+    </div>
+
+</form>
+
+</div>
+
+</div>
+
+        
+
+        <div class="inlin" id="bod" >
+                        <!-- about -->
+<div class="about">
+    <a class="bg_links social portfolio" href="https://www.rafaelalucas.com" target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links social dribbble" href="https://dribbble.com/rafaelalucas" target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links social linkedin" href="https://www.linkedin.com/in/rafaelalucas/" target="_blank">
+       <span class="icon"></span>
+    </a>
+    <a class="bg_links logo"></a>
+ </div>
+ <!-- end about -->
+ 
+ <section id="wrapper" style="width:100%;padding:0 0;border:white;margin-top:13%;margin-left:5%; ">
+    <div class="content" style="margin-left:0;margin-right:0;width:100%;">
+       <!-- Tab links -->
+       <div class="tabs">
+          
+          <button class="tablinks active" data-country="Not Assigned" onclick="noant()" style="border:white 3px dotted" id="noant" ><p data-title="Not Assigned">Not Assigned</p></button>
+          <button class="tablinks" data-country="Assigned" onclick="ant()" style="border:white 3px dotted;" id="ant"><p data-title="Assigned">Assigned</p></button>
+       </div>
+ 
+       <!-- Tab content -->
+       <div style="background-color: wheat;border:white 2px solid; height:450px;overflow-x:scroll;overflow-y: hidden;white-space: nowrap;">
+        <div class="loader" id="loader"></div>
+        <div class="container1" id="content">
+
+                
+        </div>
+       </div>
+       
+ </section> 
+            
+
+
+
+
+
+
+
+
+            <!--</div> -->
+        </div>
+
+        </div>
+  
+        <div id="defg">
+
+            <div >
+
+
+                <main></main>
+                    
+                        
+                            <div id="bod1">
+                                
+                            </div>
+                        
+                    
+                
+                    
+                </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+        </div>
+
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+    <script>
+  
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAycwPm7q4Qy9U9C-tTRUqnLu4w-3qtQ1Y",
+          authDomain: "software-engineering-2020.firebaseapp.com",
+          databaseURL: "https://software-engineering-2020.firebaseio.com",
+          projectId: "software-engineering-2020",
+          storageBucket: "software-engineering-2020.appspot.com",
+          messagingSenderId: "775588245826",
+          appId: "1:775588245826:web:a0198d25050fe3ea9c58db",
+          measurementId: "G-KZCP8ZH04S"
+        };
+      var app= firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore(app);
+        // Initialize Firebase
+       
+       
+        firebase.analytics();
+      </script>
+    <script src="exams.js"></script>
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.height = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("myNav").style.height = "0%";
+      }
+      </script>
+<script>
+  document.getElementById("logout").onclick=function(){
+      localStorage.removeItem('un');
+      location.replace("login.html");
+  }
+</script>
+</html>

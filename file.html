@@ -1,0 +1,41 @@
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <input type="file" id="imgInp">
+        <input type="button" id="but">
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+<script>
+  
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAycwPm7q4Qy9U9C-tTRUqnLu4w-3qtQ1Y",
+    authDomain: "software-engineering-2020.firebaseapp.com",
+    databaseURL: "https://software-engineering-2020.firebaseio.com",
+    projectId: "software-engineering-2020",
+    storageBucket: "software-engineering-2020.appspot.com",
+    messagingSenderId: "775588245826",
+    appId: "1:775588245826:web:a0198d25050fe3ea9c58db",
+    measurementId: "G-KZCP8ZH04S"
+  };
+var app= firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore(app);
+  // Initialize Firebase
+ 
+ 
+  firebase.analytics();
+</script>
+    <script src="file.js"></script>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images1/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts1/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts1/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor1/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor1/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor1/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css1/util.css">
+	<link rel="stylesheet" type="text/css" href="css1/main.css">
+<!--===============================================================================================-->
+
+
+<style>
+	.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 300px;
+  height: 300px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display:none;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+</head>
+<body>
+	
+	<div class="limiter" id="limiter">
+		<div class="container-login100" id="ulla" style="background-image: url('images1/bg-01.jpg');">
+			<div class="loader" id="loader"></div>
+			<div class="wrap-login100 p-t-30 p-b-50" id="wrap">
+				<span class="login100-form-title p-b-41">
+					Account Sign Up
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5">
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter name">
+						<input id="name" class="input100" type="text" name="username" placeholder="Name">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter DOB">
+						<input id="date" class="input100" type="date" name="dob" placeholder="DOB">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+                    </div>
+                    
+                    <div class="wrap-input100 validate-input" data-validate = "Enter Mail id">
+						<input id="mail"  class="input100" type="email" name="mail" placeholder="Email">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+
+                    <div class="wrap-input100 validate-input" data-validate = "Enter Phone number">
+						<input id="phno"  class="input100" type="tel" pattern="[0-9]{10}" name="phno"  placeholder="Phone Number">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input id="pass" class="input100" type="password" name="password" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Enter confirm Password">
+						<input id="pass1" class="input100" type="password" name="confpass" placeholder="Confirm Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<p style="font-size:20px;margin-left:20%;margin-bottom:2%;">Upload for Display Picture</p>
+					<input type="file" id="imgInp" style="margin-left:18%;">
+				    </div>
+                    
+					<div class="container-login100-form-btn m-t-32">
+						<button type="button" id="sub" class="login100-form-btn">
+							Sign In
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="vendor1/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/bootstrap/js/popper.js"></script>
+	<script src="vendor1/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/daterangepicker/moment.min.js"></script>
+	<script src="vendor1/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js1/main.js"></script>
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-storage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+<script>
+  
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAycwPm7q4Qy9U9C-tTRUqnLu4w-3qtQ1Y",
+    authDomain: "software-engineering-2020.firebaseapp.com",
+    databaseURL: "https://software-engineering-2020.firebaseio.com",
+    projectId: "software-engineering-2020",
+    storageBucket: "software-engineering-2020.appspot.com",
+    messagingSenderId: "775588245826",
+    appId: "1:775588245826:web:a0198d25050fe3ea9c58db",
+    measurementId: "G-KZCP8ZH04S"
+  };
+var app= firebase.initializeApp(firebaseConfig);
+var db = firebase.firestore(app);
+  // Initialize Firebase
+ 
+ 
+  firebase.analytics();
+</script>
+<script src="signup.js"></script>
+</html>

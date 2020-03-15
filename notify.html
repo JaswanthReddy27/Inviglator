@@ -1,0 +1,596 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+            <link href="vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+            <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+            <link href="css/animate.css" rel="stylesheet">
+            <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
+            <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
+            <link rel="shortcut icon" href="favicon.ico"/>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    
+    #expand{
+        display: inline-block;
+        width:50%;
+        margin-left:20%;
+        
+            }
+
+#content{
+   
+   height:100%;
+}
+
+#card{
+  display:inline-block;
+  width:20%;
+  margin-left:10%;
+  margin-top:3%;
+  background-color:rgba(128, 128, 128, 0.123);
+  vertical-align: top;
+  border: 2px solid rgba(128, 128, 128, 0.651);
+
+  box-shadow: 3px 8px #5f5d5d;
+  
+  
+}
+.ting{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  color:#000;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+.status{
+  border:#000 1px solid;
+  height:40px;
+  border-radius: 15px 50px 30px 5px; 
+  background-color: #aaaaaa;
+  margin-right:10%;
+  padding-right:20px;
+  padding-left:10px;
+}
+
+
+
+
+
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 40%; /* Full width */
+  height: auto; /* Full height */
+  overflow: visible; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  margin-left:30%;
+  margin-top:6%;
+}
+
+/* Modal Content */
+.modal-content1 {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close1 {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close1:hover,
+.close1:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+.loader {
+  border: 30px solid black;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 300px;
+  height: 300px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display:block;
+  margin-left: 35%;
+  margin-top: 10%;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+  #content{
+    display:none;
+  }
+
+
+
+
+  .container5{
+  
+  position: absolute;
+  top: 26%; left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.face{
+  width:300px;
+  height:300px;
+  border: 9px solid white;
+  border-radius:50%;
+  animation: face 7s infinite;
+  animation-delay:2s;
+  position:relative;
+  
+  margin-left:10%;
+  background-color: yellow;
+}
+
+#caption{
+  text-align:Center;
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  font-size:40px;
+  margin-top:37%;
+  margin-left:5%;
+  
+}
+.mouth{
+  height:25px;
+  width:50px;
+  margin: 0 auto;
+  margin-top: 100px;
+  background-color:#bdc3c7;
+  animation: mouth 7s infinite;
+  animation-delay:2s;
+}
+
+.tear{
+  position:absolute;
+  background-color: #3498db;
+  height:0px;
+  width:45px;
+  top:100px;
+  left:80px;
+  border-bottom-left-radius:50%;
+  animation: tear 7s infinite;
+  animation-delay:2s;
+  z-index:9999;
+}
+
+.tear2{
+  position:absolute;
+  background-color: #3498db;
+  height:0px;
+  width:45px;
+  top:100px;
+  left:250px;
+  border-bottom-right-radius:50%;
+  animation: tear 7s infinite;
+  animation-delay:2s;
+  z-index:9999;
+}
+
+.eye{
+  height:10px;
+  width:45px;
+  background-color:#bdc3c7;
+  display:inline-block;
+  margin-left:20px;
+  margin-top:20px;
+  animation: cry 7s infinite;
+  animation-delay:2s;
+}
+
+.eyebrow{
+  width:50px;
+  font-size:80px;
+  font-weight:bold;
+  color:#bdc3c7;
+  display:inline-block;
+  margin-left:70px;
+  margin-top: 10px;
+  opacity:0;
+  animation: eyebrow 7s infinite;
+  animation-delay:2s;
+}
+
+.eyebrow:nth-child(1){
+  transform:rotate(-20deg);
+}
+
+.eyebrow:nth-child(2){
+  transform:rotate(20deg);
+}
+
+@keyframes mouth{
+  10%{height:30px;width:25px; border:6px solid black;border-radius:50%;margin-top:-8px;}
+  50%{height:30px;width:25px; border:6px solid black;border-radius:50%;margin-top:-8px;}
+  60%{height:10px;width:35px;border-radius:0%;border:none;margin-top:15px;}
+}
+
+@keyframes cry{
+  10%{transform:translateY(-34px);background-color:black;}
+  50%{transform:translateY(-34px);background-color:black;}
+  60%{background-color:#bdc3c7;transform:translateY(0px);}
+}
+
+@keyframes eyebrow{
+  10%{opacity:1;color:black;}
+  50%{opacity:1;color:black;}
+  60%{opacity:0;}
+}
+
+@keyframes face{
+  10%{border-color:black;}
+  50%{border-color:black;}
+  60%{border-color:#bdc3c7;}
+}
+
+@keyframes tear{
+  10%{height:250px;}
+  50%{height:96px;}
+  52%{height:0px;}
+}
+
+.crown {
+  position: absolute;
+  top: 12%;
+  left: 52%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 15rem;
+  height: 9.0909090909rem;
+  overflow: hidden;
+  z-index: 999;
+}
+.crown:after {
+  content: '';
+  position: absolute;
+  bottom: -1.25rem;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: gold;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.crown .point {
+  position: absolute;
+  background-color: gold;
+  -webkit-transform: translate(-50%, 50%) rotate(45deg) skew(30deg, 30deg);
+          transform: translate(-50%, 50%) rotate(45deg) skew(30deg, 30deg);
+}
+.crown .point:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 2rem;
+  background-color: gold;
+  -webkit-transform: translate(-50%, -50%) skew(-30deg, -30deg);
+          transform: translate(-50%, -50%) skew(-30deg, -30deg);
+}
+.crown .point:first-child, .crown .point:last-child {
+  top: 5rem;
+  width: 10rem;
+  height: 10rem;
+}
+.crown .point:nth-child(2), .crown .point:nth-child(4) {
+  top: 3.3333333333rem;
+  width: 10rem;
+  height: 10rem;
+}
+.crown .point:nth-child(3) {
+  top: 2.5rem;
+  width: 10rem;
+  height: 10rem;
+}
+.crown .point:first-child {
+  left: 0;
+}
+.crown .point:nth-child(2) {
+  left: 25%;
+}
+.crown .point:nth-child(3) {
+  left: 50%;
+}
+.crown .point:nth-child(4) {
+  left: 75%;
+}
+.crown .point:last-child {
+  left: 100%;
+}
+
+
+
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-y: hidden;
+  transition: 0.5s;
+  z-index: 9999;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+
+.overlay button  {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 36px;
+
+  background: none;
+	
+	border: none;
+	
+	
+	cursor: pointer;
+	outline: inherit;
+  margin-left:45%;
+}
+
+.overlay button:hover, .overlay button:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+</style>
+    </head>
+
+    <body id="mithun">
+
+      <div id="myNav" class="overlay">
+
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+          <a href="loginhm.html">Home</a>
+          <a href="profile.html">Profile</a>
+          <a href="notify.html">Notifications</a>
+        
+          <button id="logout">Logout</button>
+        </div>
+        </div>
+        <button onclick="openNav()" class="btn btn-primary btn-sm" style="margin-left: 93%; "><i style="font-size: 20px;" class="fa fa-bars"></i> 
+          <span style="font-size:20px; cursor:pointer">Menu</span>	
+          </button>
+      <div class="loader" id="loader"></div>
+
+        
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content" >
+              <span class="close">&times;</span>
+                <div id="cont">
+
+                </div>
+
+                <!--<h3>Reason for declination</h3>
+              <textarea id="reason" rows="4" cols="50"></textarea><br/>
+              <input type="text" id="ids" style="display:none">
+              <button type="button" id="sub">Reply</button>-->
+            </div>
+          
+          </div>
+
+
+          <div id="myModal1" class="modal1">
+
+            <!-- Modal content -->
+            <div class="modal-content1" >
+              <span class="close1">&times;</span>
+                <div id="cont1">
+                  <h3>Reason for declination</h3>
+                  <textarea id="reason" rows="4" cols="50"></textarea>
+                  <input type="text" id="ids" style="display:none">
+                  <button type="button" id="sub" style="margin-left:4%;"><i class="fa fa-check" style="color:green;font-size: 20px;" aria-hidden="true"></i></button>
+                  
+                
+                
+                  <!--<img src="queen.jpg"> <p><i class="fa fa-quote-left" aria-hidden="true"></i>
+                    While others were dreaming about it - I was getting it done. </p>-->
+
+                </div>
+
+                <!--<h3>Reason for declination</h3>
+              <textarea id="reason" rows="4" cols="50"></textarea><br/>
+              <input type="text" id="ids" style="display:none">
+              <button type="button" id="sub">Reply</button>-->
+            </div>
+          
+          </div>
+
+
+          
+    
+            <div id="content">
+
+            </div>
+
+
+            <!--<div id="expand" class="inlin">
+
+                    <img src="queen.jpg">
+                    <p><i class="fa fa-quote-left" aria-hidden="true"></i>
+                      While others were dreaming about it - I was getting it done. </p>
+            </div>-->
+        
+    </body>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-analytics.js"></script>
+
+    <script>
+  
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAycwPm7q4Qy9U9C-tTRUqnLu4w-3qtQ1Y",
+          authDomain: "software-engineering-2020.firebaseapp.com",
+          databaseURL: "https://software-engineering-2020.firebaseio.com",
+          projectId: "software-engineering-2020",
+          storageBucket: "software-engineering-2020.appspot.com",
+          messagingSenderId: "775588245826",
+          appId: "1:775588245826:web:a0198d25050fe3ea9c58db",
+          measurementId: "G-KZCP8ZH04S"
+        };
+      var app= firebase.initializeApp(firebaseConfig);
+      var db = firebase.firestore(app);
+        // Initialize Firebase
+       
+       
+        firebase.analytics();
+      </script>
+    <script src="notify.js"></script>
+    <script>
+      document.getElementById("logout").onclick=function(){
+          localStorage.removeItem('un');
+          location.replace("login.html");
+      }
+  </script>
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.height = "100%";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNav").style.height = "0%";
+    }
+    </script>
+
+<script>
+  document.getElementById("logout").onclick=function(){
+      localStorage.removeItem('un');
+      location.replace("login.html");
+  }
+</script>
+
+</html>
